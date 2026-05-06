@@ -10,6 +10,7 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
+import TopBar from "../components/topbar";
 
 function DashboardPage() {
   const [chatOpen, setChatOpen] = useState(false);
@@ -27,33 +28,13 @@ function DashboardPage() {
     <div className="relative min-h-full bg-slate-50/80">
       <div className="mx-auto max-w-6xl px-6 py-8 lg:px-10 lg:py-10">
         <header className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <p
-              className="text-2xl font-extrabold tracking-tight text-neutral-950 lg:text-3xl lg:leading-tight"
-              role="heading"
-              aria-level={1}
-            >
-              Bom dia, Alex.
-            </p>
-            <p className="mt-1.5 text-slate-600">O seu pulso acadêmico está estável.</p>
-          </div>
+            <TopBar>
+              <p className="text-2xl font-extrabold tracking-tight text-neutral-950 lg:text-3xl">
+                Bom dia, Alex.
+              </p>
+              <p className="mt-1.5 text-slate-600">O seu pulso acadêmico está estável.</p>  
+            </TopBar>
           <div className="flex items-center gap-2 sm:gap-3">
-            <button
-              type="button"
-              className="rounded-full p-2.5 text-slate-500 transition-colors hover:bg-white hover:text-slate-800"
-              aria-label="Notificações"
-            >
-              <Bell className="h-5 w-5" strokeWidth={1.75} />
-            </button>
-            <div
-              className="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-slate-200 bg-slate-200 bg-cover bg-center shadow-sm"
-              style={{
-                backgroundImage:
-                  "url(https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=128&h=128&fit=crop&crop=face)",
-              }}
-              role="img"
-              aria-label="Foto do perfil"
-            />
           </div>
         </header>
 

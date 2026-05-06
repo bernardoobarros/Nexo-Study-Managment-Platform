@@ -1,0 +1,27 @@
+{
+  "name": "nexo-platform",
+  "version": "1.0.0",
+  "description": "Server side of nexo study manager",
+  "keywords": [
+    "education",
+    "study-manager"
+  ],
+  "homepage": "https://github.com/bernardoobarros/Nexo-Study-Managment-Platform#readme",
+  "bugs": {
+    "url": "https://github.com/bernardoobarros/Nexo-Study-Managment-Platform/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bernardoobarros/Nexo-Study-Managment-Platform.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

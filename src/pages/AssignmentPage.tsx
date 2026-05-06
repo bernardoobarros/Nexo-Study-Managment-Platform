@@ -6,9 +6,8 @@ import {
   type AssignmentStatus,
   type MensagemChat,
 } from "../data/mockAssignments.ts";
+import TopBar from "../components/topbar.tsx";
 
-const AVATAR_URL =
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=128&h=128&fit=crop&crop=face";
 
 function statusPresentation(status: AssignmentStatus): { label: string; className: string } {
   switch (status) {
@@ -156,16 +155,13 @@ function AssignmentPage() {
     <div className="min-h-full bg-slate-50/80">
       <div className="mx-auto max-w-[1400px] px-4 py-6 sm:px-6 lg:px-10 lg:py-8">
         <header className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="min-w-0">
+          <TopBar>
             <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Tarefas</p>
-            <p
-              className="mt-1 text-xl font-extrabold tracking-tight text-neutral-950 sm:text-2xl"
-              role="heading"
-              aria-level={1}
-            >
+            <p className="mt-1 text-xl font-extrabold tracking-tight text-neutral-950">
               Detalhes do trabalho
             </p>
-          </div>
+            {/* keep your <select> here, inside children */}
+          </TopBar>
           <div className="flex flex-wrap items-center gap-3">
             <div className="relative min-w-[min(100%,280px)] sm:min-w-[320px]">
               <label htmlFor="seletor-tarefa" className="sr-only">
@@ -199,7 +195,7 @@ function AssignmentPage() {
               </button>
               <div
                 className="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-slate-200 bg-slate-200 bg-cover bg-center shadow-sm"
-                style={{ backgroundImage: `url(${AVATAR_URL})` }}
+                style={{ backgroundImage: `url()` }}
                 role="img"
                 aria-label="Foto do perfil"
               />

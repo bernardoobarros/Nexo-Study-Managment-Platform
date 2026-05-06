@@ -1,8 +1,6 @@
 import { Bell, Check, FileText, FileVideo, Layout, Lock, Plus, School, Search, Shield, Sparkles } from "lucide-react";
 import { MOCK_ARQUIVOS_SINCRONIA, MOCK_SERVICOS, type IntegrationService } from "../data/mockIntegrations.ts";
-
-const AVATAR_URL =
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=128&h=128&fit=crop&crop=face";
+import TopBar from "../components/topbar.tsx";
 
 function IconeServico({ servico }: { servico: IntegrationService["icone"] }) {
   if (servico === "classroom") {
@@ -23,6 +21,7 @@ function IconeServico({ servico }: { servico: IntegrationService["icone"] }) {
     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-50 text-violet-700">
       <Sparkles className="h-6 w-6" strokeWidth={1.75} />
     </div>
+    
   );
 }
 
@@ -61,40 +60,13 @@ function IntegrationPage() {
     <div className="min-h-full bg-slate-50/80">
       <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-10 lg:py-8">
         <header className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Integrações</p>
-            <p className="mt-1 text-2xl font-extrabold tracking-tight text-neutral-950" role="heading" aria-level={1}>
-              Central de Integrações
-            </p>
-          </div>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-            <div className="relative min-w-[min(100%,320px)]">
-              <Search
-                className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"
-                strokeWidth={2}
-              />
-              <input
-                type="search"
-                placeholder="Pesquisar serviços…"
-                className="w-full rounded-full border border-slate-200 bg-white py-2.5 pl-10 pr-4 text-sm text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
-                aria-label="Pesquisar serviços"
-              />
-            </div>
-            <div className="flex items-center justify-end gap-2">
-              <button
-                type="button"
-                className="rounded-full p-2.5 text-slate-500 transition-colors hover:bg-white hover:text-slate-800"
-                aria-label="Notificações"
-              >
-                <Bell className="h-5 w-5" strokeWidth={1.75} />
-              </button>
-              <div
-                className="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-slate-200 bg-cover bg-center shadow-sm"
-                style={{ backgroundImage: `url(${AVATAR_URL})` }}
-                role="img"
-                aria-label="Foto do perfil"
-              />
-            </div>
+            <TopBar searchPlaceholder="Pesquisar consultas históricas…">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Integrações</p>
+              <p className="mt-1 text-2xl font-extrabold tracking-tight text-neutral-950">
+                Central de Integrações
+              </p>
+            </TopBar>
           </div>
         </header>
 
