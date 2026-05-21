@@ -16,7 +16,8 @@ function App() {
       <main className="min-h-0 min-w-0 flex-1 overflow-y-auto bg-slate-50/50">
         <Routes>
           <Route path="/" element={<DashboardPage />} />
-          <Route path="/tarefas" element={<AssignmentPage />} />
+          <Route path="/tarefas" element={<DashboardPage />} />
+          <Route path="/assignments/:assignmentId" element={<AssignmentPage />} />
           <Route path="/integracoes" element={<IntegrationPage />} />
           <Route path="/arquivo" element={<ArchivePage />} />
           <Route path="*" element={<Navigate to="/" replace />} />

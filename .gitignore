@@ -25,3 +25,7 @@ dist-ssr
 
 #ENV
 .env
+
+# Local prototype data
+server/data/*.sqlite
+server/data/*.sqlite-*

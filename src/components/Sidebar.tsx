@@ -21,10 +21,10 @@ const NAV_ITEMS: {
   end?: boolean;
   icon: typeof LayoutDashboard;
 }[] = [
-  { id: "painel", label: "Painel", to: "/", end: true, icon: LayoutDashboard },
-  { id: "tarefas", label: "Tarefas", to: "/tarefas", icon: FileText },
-  { id: "integracoes", label: "Integrações", to: "/integracoes", icon: Network },
-  { id: "arquivo", label: "Arquivo", to: "/arquivo", icon: History },
+  { id: "painel", label: "Dashboard", to: "/", end: true, icon: LayoutDashboard },
+  { id: "tarefas", label: "Assignments", to: "/tarefas", icon: FileText },
+  { id: "integracoes", label: "Integrations", to: "/integracoes", icon: Network },
+  { id: "arquivo", label: "Archive", to: "/arquivo", icon: History },
 ];
 
 function Sidebar({ onNovaConsulta }: SidebarProps) {
@@ -33,11 +33,11 @@ function Sidebar({ onNovaConsulta }: SidebarProps) {
       <div className="px-1">
         <p className="text-xl font-bold tracking-tight text-indigo-600">Nexo</p>
         <p className="mt-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-slate-400">
-          O Curador Digital
+          Assignment Ops
         </p>
       </div>
 
-      <nav className="mt-10 flex flex-col gap-1 px-0.5" aria-label="Navegação principal">
+      <nav className="mt-10 flex flex-col gap-1 px-0.5" aria-label="Primary navigation">
         {NAV_ITEMS.map(({ id, label, to, end, icon: Icon }) => (
           <NavLink
             key={id}
@@ -72,23 +72,23 @@ function Sidebar({ onNovaConsulta }: SidebarProps) {
           onClick={onNovaConsulta}
           className="w-full rounded-lg bg-blue-600 px-4 py-3 text-sm font-semibold text-white shadow-md transition-colors hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
         >
-          + Nova Consulta
+          + Add Manual Assignment
         </button>
 
-        <nav className="mt-8 flex flex-col gap-1 px-0.5" aria-label="Ajuda e conta">
+        <nav className="mt-8 flex flex-col gap-1 px-0.5" aria-label="Support and account">
           <a
-            href="#suporte"
+            href="#support"
             className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-500 transition-colors hover:bg-slate-100/80 hover:text-slate-700"
           >
             <HelpCircle className="h-5 w-5 shrink-0 stroke-[1.75] text-slate-500" aria-hidden />
-            Suporte
+            Support
           </a>
           <a
-            href="#conta"
+            href="#account"
             className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-500 transition-colors hover:bg-slate-100/80 hover:text-slate-700"
           >
             <User className="h-5 w-5 shrink-0 stroke-[1.75] text-slate-500" aria-hidden />
-            Minha Conta
+            Account
           </a>
         </nav>
       </div>

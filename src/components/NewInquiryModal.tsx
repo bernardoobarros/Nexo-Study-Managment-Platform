@@ -5,18 +5,18 @@ export type NewInquiryModalProps = {
   onClose: () => void;
 };
 
-const DISCIPLINAS: { value: string; label: string; disabled?: boolean }[] = [
-  { value: "", label: "Selecione a disciplina acadêmica…", disabled: true },
-  { value: "historia", label: "História" },
-  { value: "matematica", label: "Matemática" },
-  { value: "biologia", label: "Biologia" },
-  { value: "filosofia", label: "Filosofia" },
-  { value: "fisica", label: "Física" },
-  { value: "quimica", label: "Química" },
-  { value: "geografia", label: "Geografia" },
-  { value: "portugues", label: "Português" },
-  { value: "ingles", label: "Inglês" },
-  { value: "espanhol", label: "Espanhol" },
+const COURSES: { value: string; label: string; disabled?: boolean }[] = [
+  { value: "", label: "Choose a course...", disabled: true },
+  { value: "history", label: "History" },
+  { value: "math", label: "Math" },
+  { value: "biology", label: "Biology" },
+  { value: "philosophy", label: "Philosophy" },
+  { value: "physics", label: "Physics" },
+  { value: "chemistry", label: "Chemistry" },
+  { value: "geography", label: "Geography" },
+  { value: "language-arts", label: "Language Arts" },
+  { value: "english", label: "English" },
+  { value: "spanish", label: "Spanish" },
 ];
 
 function NewInquiryModal({ onClose }: NewInquiryModalProps) {
@@ -37,27 +37,27 @@ function NewInquiryModal({ onClose }: NewInquiryModalProps) {
       <div
         role="dialog"
         aria-modal="true"
-        aria-labelledby="nova-pesquisa-titulo"
+        aria-labelledby="manual-assignment-title"
         className="max-h-[90svh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white p-8 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0 pr-2">
             <h2
-              id="nova-pesquisa-titulo"
+              id="manual-assignment-title"
               className="text-2xl font-extrabold tracking-tight text-neutral-950"
             >
-              Iniciar Nova Pesquisa
+              Add Manual Assignment
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-slate-600">
-              Defina seu foco acadêmico para iniciar a jornada de pesquisa selecionada.
+              Manual capture is not wired to the backend yet. This placeholder keeps the shell in place for the next milestone.
             </p>
           </div>
           <button
             type="button"
             onClick={onClose}
             className="shrink-0 rounded-lg p-2 text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
-            aria-label="Fechar"
+            aria-label="Close"
           >
             <X className="h-5 w-5" strokeWidth={1.75} />
           </button>
@@ -72,20 +72,20 @@ function NewInquiryModal({ onClose }: NewInquiryModalProps) {
         >
           <div>
             <label htmlFor="titulo-tarefa" className="text-xs font-semibold uppercase tracking-wide text-slate-600">
-              Título da tarefa
+              Assignment title
             </label>
             <input
               id="titulo-tarefa"
               name="titulo"
               type="text"
-              placeholder="Ex.: Ensaio sobre Revolução Industrial"
+              placeholder="Ex.: Ethics reflection draft"
               className="mt-2 w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
             />
           </div>
 
           <div>
             <label htmlFor="assunto" className="text-xs font-semibold uppercase tracking-wide text-slate-600">
-              Assunto
+              Course
             </label>
             <div className="relative mt-2">
               <select
@@ -94,7 +94,7 @@ function NewInquiryModal({ onClose }: NewInquiryModalProps) {
                 defaultValue=""
                 className="w-full appearance-none rounded-lg border border-slate-200 bg-slate-50 py-3 pl-4 pr-10 text-sm text-slate-900 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-500/20"
               >
-                {DISCIPLINAS.map((opt) => (
+                {COURSES.map((opt) => (
                   <option key={opt.value || "placeholder"} value={opt.value} disabled={opt.disabled}>
                     {opt.label}
                   </option>
@@ -113,10 +113,9 @@ function NewInquiryModal({ onClose }: NewInquiryModalProps) {
               <Sparkles className="h-5 w-5" strokeWidth={1.75} />
             </div>
             <div>
-              <p className="text-sm font-semibold text-emerald-900">Assistente de IA pronto</p>
+              <p className="text-sm font-semibold text-emerald-900">Next milestone target</p>
               <p className="mt-1 text-sm leading-relaxed text-emerald-800/95">
-                Ao criar a pesquisa, o assistente poderá consultar bases como JSTOR, PubMed e outras fontes
-                acadêmicas para apoiar seu trabalho.
+                This modal will eventually create a local assignment record for anything that does not come from Google Classroom.
               </p>
             </div>
           </div>
@@ -127,13 +126,13 @@ function NewInquiryModal({ onClose }: NewInquiryModalProps) {
               onClick={onClose}
               className="rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400"
             >
-              Cancelar
+              Cancel
             </button>
             <button
               type="submit"
               className="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
             >
-              Criar Pesquisa
+              Save Placeholder
             </button>
           </div>
         </form>

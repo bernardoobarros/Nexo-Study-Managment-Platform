@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Bell, Search } from "lucide-react";
 
 const AVATAR_URL =
@@ -5,7 +6,7 @@ const AVATAR_URL =
 
 type TopBarProps = {
   searchPlaceholder?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
 function TopBar({ searchPlaceholder, children }: TopBarProps) {
@@ -34,7 +35,7 @@ function TopBar({ searchPlaceholder, children }: TopBarProps) {
           <button
             type="button"
             className="rounded-full p-2.5 text-slate-500 transition-colors hover:bg-white hover:text-slate-800"
-            aria-label="Notificações"
+            aria-label="Notifications"
           >
             <Bell className="h-5 w-5" strokeWidth={1.75} />
           </button>
@@ -42,7 +43,7 @@ function TopBar({ searchPlaceholder, children }: TopBarProps) {
             className="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-slate-200 bg-slate-200 bg-cover bg-center shadow-sm"
             style={{ backgroundImage: `url(${AVATAR_URL})` }}
             role="img"
-            aria-label="Foto do perfil"
+            aria-label="Profile photo"
           />
         </div>
       </div>
